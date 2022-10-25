@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="8">
+          <ion-text color="primary">
+            <h2>Appointment</h2>
+          </ion-text>
+        </ion-col>
+        <ion-col size="4">
+          <ion-list>
+            <ion-item>
+              <ion-select (ionChange)="dropDownChange($event)" interface="popover" [placeholder]="'Welcome ' + cart.userName">
+                <ion-select-option value="cart" >View Cart</ion-select-option>
+                <ion-select-option value="password">Change Password</ion-select-option>
+                <ion-select-option value="logout">Logout</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="at-center animate__animated animate__bounceIn">Page under construction</div>
+  <!-- <img src="../../assets/under.jpeg" /> -->
+</ion-content>

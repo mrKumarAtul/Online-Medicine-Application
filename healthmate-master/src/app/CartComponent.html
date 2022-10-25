@@ -1,0 +1,48 @@
+<div style="margin:0;padding:0">
+    <div style="margin:2%">
+        <h2> Cart </h2>
+    </div>
+<div style="text-align: center;width: 80%;margin:1% auto">
+    <button style="width: 50%;" class="btn btn-primary" (click)="checkOutClicked()">Checkout</button>
+</div>
+<div style="text-align: center;width: 80%;margin:1% auto">
+    <button style="width: 50%;"  class="btn btn-primary" (click)="backToOrders()">Back to orders</button>
+</div>
+<br />
+
+<h3 style="padding: 2%;">Item(s) in cart:</h3>
+<h4 *ngIf="cart.cartTotal > 0 " style="padding: 2%;">Total:  {{cart.cartTotal}} INR</h4>
+
+<h3 *ngIf="cart.cartProducts.length ===0 " style="padding: 5%;">No item(s)</h3>
+
+
+<ul style="width: 80%;margin: 0 auto;" *ngFor="let m of cart.cartProducts" class="list-group">
+    <li style="font-size: 1.1em;" class="list-group-item">{{m.name}} x {{m.quantity}}
+        <small style="float: right;"> [{{m.price}} INR each ] </small>
+    </li>
+  </ul>
+<!-- <div *ngFor="let m of cart.cartProducts">
+    <div style="margin-right:100px;"> {{m.name}} x {{m.quantity}}
+
+    </div>
+</div> -->
+
+<!-- <ion-text color="primary">
+    <h3 style="padding:2%">Item(s) in cart:</h3>
+    <ion-button *ngIf="medicineList.length > 0" (click)="checkOutClicked()" shape="round">Checkout</ion-button>
+
+</ion-text>
+
+<ion-text *ngIf="medicineList.length === 0" color="primary">
+    <h2 style="padding: 5%;">No item(s)</h2>
+</ion-text>
+
+<ion-list>
+    <ion-item *ngFor="let m of cart.cartProducts">
+        <ion-label style="margin-right:100px;"> {{m.name}} x {{m.quantity}}
+
+        </ion-label>
+    </ion-item>
+
+</ion-list> --> 
+</div>

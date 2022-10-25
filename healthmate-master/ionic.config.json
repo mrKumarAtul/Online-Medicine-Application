@@ -1,0 +1,8 @@
+{
+  "name": "healthmate",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "da033987"
+}

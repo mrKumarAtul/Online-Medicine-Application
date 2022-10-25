@@ -1,0 +1,100 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-text color="primary">
+            <h2 *ngIf="showCart === false">Orders</h2>
+            <h2 *ngIf="showCart">Cart</h2>
+          </ion-text>
+        </ion-col>
+        <ion-col size="6">
+          <div style="float: right;">
+            <ion-button *ngIf="showCart === false" (click)="viewCartClicked()" shape="round">View Cart</ion-button>
+            <ion-button *ngIf="showCart === false" (click)="checkOutClicked()" shape="round">Checkout</ion-button>
+            <ion-button *ngIf="showCart" (click)="checkOutClicked()" shape="round">Back to orders</ion-button>
+            <ion-select (ionChange)="dropDownChange($event)" interface="popover"
+              [placeholder]="'Welcome ' + cart.userName">
+              <ion-select-option value="cart">View Cart</ion-select-option>
+              <ion-select-option value="password">Change Password</ion-select-option>
+              <ion-select-option value="logout">Logout</ion-select-option>
+            </ion-select>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="font-size: 2em;" [fullscreen]="true">
+  <ng-container *ngIf="showCart">
+    <CartComponent></CartComponent>
+  </ng-container>
+
+  <ng-container *ngIf="showCart === false">
+    <ion-searchbar show-clear-button="never" id="search" animated="true" placeholder="Search medicines"></ion-searchbar>
+    <div style="text-align: center;">
+      <ion-button (click)="searchItem()" shape="round">Search</ion-button>
+      <ion-button (click)="resetSearch()" color="medium" shape="round">Reset</ion-button>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-button (click)="seeMedicineList()" shape="round">Browse Medicine</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+    <ng-container *ngIf="textInSearchBox">
+      <ion-text *ngIf="medicineList.length === 0" color="primary">
+        <h2 style="padding: 5%;">No match found</h2>
+      </ion-text>
+      <ion-list *ngIf="medicineList.length > 0">
+        <ion-text color="primary">
+          <h2 style="padding: 5%;">List of medicines</h2>
+        </ion-text>
+        <ion-item *ngFor="let m of medicineList">
+          <ion-label style="font-size: 1.5em;" (click)="showMedicineDetails(m)">
+            {{m.name}}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ng-container>
+
+
+
+
+    <ion-text *ngIf="orderHistory.length === 0" color="primary">
+      <h2 style="padding: 5%;">No transactions</h2>
+    </ion-text>
+    <ion-list *ngIf="orderHistory.length > 0">
+      <ion-text color="primary">
+        <h2 style="padding: 5%;">List of transactions(s):</h2>
+      </ion-text>
+
+      <div class="row" style="padding: 2%;box-shadow: 1px 1px 1px 1px black;
+    width: 97%;
+    margin: 1% auto;" *ngFor="let order of orderHistory">
+        <div style="font-size: 1.2em;" class="col-lg-10 col-md-10 col-sm-8">
+          Order ID : {{order.orderId}}
+        </div>
+
+        <div style="text-align: right;" class="col-lg-2 col-md-2 col-sm-4">
+          <ion-button (click)="refillMedicine(order.orderId)" shape="round">Refill</ion-button>
+        </div>
+
+
+        <div *ngFor="let product of order.product;let i2 = index" class="col-lg-12 col-md-12 col-sm-12">
+          {{i2+1}} ) {{product.productName}} x {{product.units}}
+        </div>
+      </div>
+
+
+    </ion-list>
+
+
+  </ng-container>
+
+
+
+</ion-content>

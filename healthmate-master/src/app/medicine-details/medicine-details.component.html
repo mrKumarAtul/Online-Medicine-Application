@@ -1,0 +1,49 @@
+<style>
+  .divScroll {
+  overflow:scroll;
+  }
+  </style>
+  <div class="divScroll">
+  <div class="card" style="width: 90%;margin: 1% auto;">
+  <div class="card-body">
+    <h2 class="card-title">{{details.name}}</h2>
+    <h4 class="card-subtitle mb-2 text-muted">Manufacturer :{{details.manufacturer}}</h4>
+    <h5 class="card-text">Allergy: {{details.alergy}}</h5>
+    <h5 class="card-text">Benefits: {{details.benifits}}</h5>
+    <h5 class="card-text" *ngIf="details.prescribed === 'false'">Medical Prescription required: No</h5>
+    <h5 class="card-text" *ngIf="details.prescribed === 'true'">Medical Prescription required: Yes</h5>
+
+    <div *ngIf="details.prescribed === 'true'" class=" row input-group" style="margin-top: 10px;border: 1px solid black;
+    padding: 4%;">
+    <div style="text-align: center" class="col-md-12 col-lg-12 col-sm-12">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroupFileAddon01">Upload Medical Prescription</span>
+      </div>
+    </div>
+    <div style="text-align: center" class="col-md-12 col-lg-12 col-sm-12">
+     Step-1) <div style="display: inline;" class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile01"
+          aria-describedby="inputGroupFileAddon01">
+      </div>
+    </div>
+    <div style="margin: 2% auto;text-align: center;" class="col-md-12 col-lg-12 col-sm-12">
+      Step-2) <button style="width: 50%;" (click)="uploadButtonClicked()" class="btn btn-success">Upload</button>
+    </div>
+    </div>
+    <!-- <div class="col-md-4 col-lg-4 col-sm-4">
+      
+    </div> -->
+
+
+
+    
+
+    <ion-button *ngIf="isLoading" fill="solid">Loading ...</ion-button>
+    Units: <input id="units" [(ngModel)]="units" type="text" placeholder="Enter Units" />
+    <ion-button *ngIf="isLoading === false && details.instock === 'true' " (click)="addToCart()" fill="solid">Add to cart</ion-button>
+    <ion-button *ngIf="isLoading === false && details.instock === 'false' " color="medium" fill="solid">Out of stock</ion-button>
+    
+    <ion-button *ngIf="isLoading === false" (click)="backToMedicine()" fill="solid">Back to medicines</ion-button>
+  </div>
+</div>
+</div>

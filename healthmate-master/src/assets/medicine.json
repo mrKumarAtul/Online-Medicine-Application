@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Bret",
+        "manufacturer": "Sincere@april.biz",
+        "alergy": "Gwenborough",
+        "benifits": "Leanne Graham",
+        "inStock": true,
+        "price": 100
+    },
+    {
+        "name": "Antonette",
+        "manufacturer": "Shanna@melissa.tv",
+        "alergy": "Wisokyburgh",
+        "benifits": "Ervin Howell",
+        "inStock": false,
+        "price": 100
+    },
+    {
+        "name": "Samantha",
+        "manufacturer": "Nathan@yesenia.net",
+        "alergy": "McKenziehaven",
+        "benifits": "Clementine Bauch",
+        "inStock": true,
+        "price": 100
+    },
+    {
+        "name": "Karianne",
+        "manufacturer": "Julianne.OConner@kory.org",
+        "alergy": "South Elvis",
+        "benifits": "Patricia Lebsack",
+        "inStock": true,
+        "price": 100
+    },
+    {
+        "name": "Kamren",
+        "manufacturer": "Lucio_Hettinger@annie.ca",
+        "alergy": "Roscoeview",
+        "benifits": "Chelsey Dietrich",
+        "inStock": true,
+        "price": 100
+    },
+    {
+        "name": "Leopoldo_Corkery",
+        "manufacturer": "Karley_Dach@jasper.info",
+        "alergy": "South Christy",
+        "benifits": "Mrs. Dennis Schulist",
+        "inStock": true,
+        "price": 100
+    },
+    {
+        "name": "Elwyn.Skiles",
+        "manufacturer": "Telly.Hoeger@billy.biz",
+        "alergy": "Howemouth",
+        "benifits": "Kurtis Weissnat",
+        "inStock": true,
+        "price": 100
+    },
+    {
+        "name": "Maxime_Nienow",
+        "manufacturer": "Sherwood@rosamond.me",
+        "alergy": "Aliyaview",
+        "benifits": "Nicholas Runolfsdottir V",
+        "inStock": true,
+        "price": 100
+    },
+    {
+        "name": "Delphine",
+        "manufacturer": "Chaim_McDermott@dana.io",
+        "alergy": "Bartholomebury",
+        "benifits": "Glenna Reichert",
+        "inStock": true,
+        "price": 100
+    },
+    {
+        "name": "Moriah.Stanton",
+        "manufacturer": "Rey.Padberg@karina.biz",
+        "alergy": "Lebsackbury",
+        "benifits": "Clementina DuBuque",
+        "inStock": true,
+        "price": 100
+    }
+]
